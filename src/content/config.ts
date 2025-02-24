@@ -31,17 +31,6 @@ const authors = defineCollection({
   }),
 });
 
-const podcasts = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    created: z.string().transform((str) => new Date(str)),
-    published: z.boolean().optional().default(false),
-    tags: z.array(z.string()),
-  }),
-});
-
 const pages = defineCollection({
   type: "content",
   schema: z.object({
@@ -54,6 +43,5 @@ const pages = defineCollection({
 export const collections = {
   articles,
   authors,
-  podcasts,
   pages,
 };
