@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import { site } from "./src/site";
 import inspectUrls from "@jsdevtools/rehype-url-inspector";
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,4 +25,6 @@ export default defineConfig({
       // ...other markdown configuration options
     ],
   },
+  output: 'server',
+  adapter: netlify(),
 });
